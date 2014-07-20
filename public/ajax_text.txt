@@ -1,0 +1,7 @@
+This is some text.
+
+This is some text below the first text with a new line in between.
+
+This is some more text. I am going to test out AJAX this way with a local file.
+
+Later, I will test out AJAX with a MySQL database. How about them apples?
