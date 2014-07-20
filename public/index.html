@@ -7,18 +7,55 @@
 		<script>
 			function loadXMLDoc()
 			{
-				// AJAX Code goes here.
+				var xmlhttp;
+
+				if (window.XMLHttpRequest)
+				{
+					// Works with IE7+, Firefox, Chrome, Opera, Safari
+					xmlhttp = new XMLHttpRequest();
+				}
+				else
+				{
+					// Works for IE6 and IE5, unfortunately. Web devs still have to consider those browsers.
+					xmlhttp = new ActiveObject("Microsoft.XMLHTTP");
+				};
+
+				xmlhttp.onreadystatechange = function()
+				{
+					if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+					{
+						document.getElementById("changeP").innerHTML = xmlhttp.responseText;
+					};
+				}
+
+				xmlhttp.open("GET", "ajax_text.txt", true);
+				xmlhttp.send();
+
 			}
 		</script>
 	</head>
 	<body>
 
 	    <div class="container">
-	    	<h1 class="text-center">Just a place for experiments</h1>
-	    	<div id="changeDiv">
-	    		<h2>AJAX requests, let's see how this works.</h2>
-	    	</div>
-	    	<button type="button" onclick="loadXMDoc()">Change Content</button>
+
+	    	<div class="row">
+	    		<div class="col-md-12">
+		    		<h2 class="text-center">AJAX requests, let's see how this works.</h2>
+			    </div>
+			</div>
+
+			<div class="row">
+	    		<div class="col-md-12">
+		    		<p class="text-center" id="changeP"></p>
+			    </div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-3 col-md-offset-5">
+					<button class="btn btn-primary btn-large" type="button" onclick="loadXMLDoc()">Add Content</button>
+				</div>
+			</div>
+
 	    </div>
 	    
 	    <script src="/js/jquery.min.js"></script>
