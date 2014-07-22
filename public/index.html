@@ -27,6 +27,7 @@
 					if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
 					{
 						document.getElementById("changeP").innerHTML = xmlhttp.responseText;
+						console.log(document.getElementById("changeP").innerHTML);
 					};
 				}
 
@@ -34,6 +35,13 @@
 				xmlhttp.send();
 
 			}
+		</script>
+		<script>
+			$(document).ready(function() {
+				$("button").click(function() {
+					$("#changeP").slideToggle();
+				});
+			});
 		</script>
 	</head>
 	<body>
