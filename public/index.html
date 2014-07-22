@@ -4,6 +4,8 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link rel="stylesheet" href="/css/bootstrap.min.css">
 		<title>Python Exercises</title>
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
 		<script>
 			function loadXMLDoc()
 			{
@@ -28,7 +30,7 @@
 					};
 				}
 
-				xmlhttp.open("GET", "ajax_text.txt", true);
+				xmlhttp.open("GET", "test_text.txt", true);
 				xmlhttp.send();
 
 			}
@@ -36,7 +38,13 @@
 	</head>
 	<body>
 
-	    <div class="container">
+	    <div class="container-fluid">
+
+	    	<div class="row">
+	    		<div class="col-md-12">
+		    		<h1 class="text-center">Python learning and exercises.</h2>
+			    </div>
+			</div>
 
 	    	<div class="row">
 	    		<div class="col-md-12">
@@ -51,14 +59,12 @@
 			</div>
 
 			<div class="row">
-				<div class="col-md-3 col-md-offset-5">
+				<div class="col-md-2 col-md-offset-5 text-center">
 					<button class="btn btn-primary btn-large" type="button" onclick="loadXMLDoc()">Add Content</button>
 				</div>
 			</div>
 
 	    </div>
 	    
-	    <script src="/js/jquery.min.js"></script>
-		<script src="/js/bootstrap.min.js"></script>
 	</body>
 </html>
